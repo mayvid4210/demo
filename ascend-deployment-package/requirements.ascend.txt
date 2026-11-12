@@ -1,0 +1,2 @@
+# Explicit production server. Review and pin a compatible version.
+gunicorn

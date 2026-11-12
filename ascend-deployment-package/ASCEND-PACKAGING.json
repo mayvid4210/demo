@@ -1,0 +1,29 @@
+{
+  "selected_root": ".",
+  "original_files_included": [
+    ".env.example",
+    "app.py",
+    "requirements.txt",
+    "static/demo.css",
+    "templates/home.html"
+  ],
+  "generated_files_added": [
+    ".dockerignore",
+    "requirements.ascend.txt",
+    "Dockerfile",
+    ".github/workflows/ascend-migration.yml",
+    "render.yaml",
+    "MIGRATION.md",
+    ".gitignore",
+    "ASCEND-PACKAGING.json"
+  ],
+  "existing_files_preserved": [
+    ".env.example",
+    "requirements.txt"
+  ],
+  "excluded_files": [],
+  "blocked_reasons": [],
+  "warnings": [
+    "Prepared files still require configuration review, CI validation, and successful cloud deployment. Secret detection is heuristic and does not guarantee a secret-free archive."
+  ]
+}

@@ -1,0 +1,16 @@
+# Review template; schema fields checked against https://render.com/docs/blueprint-spec
+# Nothing is provisioned by Ascend. Review free-tier limits before manual setup.
+services:
+  - type: web
+    name: ascend-app
+    runtime: docker
+    plan: free
+    autoDeployTrigger: "off"
+    dockerfilePath: "./Dockerfile"
+    dockerContext: "."
+    healthCheckPath: "/health"
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: SECRET_KEY
+        sync: false

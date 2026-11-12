@@ -1,0 +1,33 @@
+name: Migration container smoke test
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SMOKE_TEST_PATH: "/health"
+      APP_DIR: "."
+      HOST_PORT: "10000"
+      CONTAINER_PORT: "10000"
+      # Existing images may ignore PORT. Confirm the actual listen port before enabling.
+      CONTAINER_PORT_REVIEWED: "true"
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Build and smoke test
+        working-directory: ${{ env.APP_DIR }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          trap 'docker logs ascend-smoke 2>/dev/null || true; docker rm -f ascend-smoke 2>/dev/null || true' EXIT
+          if [[ "$CONTAINER_PORT_REVIEWED" != "true" ]]; then
+            echo "::error::Review the existing Dockerfile's actual listen port, set CONTAINER_PORT, then set CONTAINER_PORT_REVIEWED=true. Existing images may ignore PORT."
+            exit 1
+          fi
+          docker build -t ascend-smoke .
+          # Add required application environment configuration before enabling this job.
+          docker run -d --name ascend-smoke -e PORT="$CONTAINER_PORT" -p "127.0.0.1:${HOST_PORT}:${CONTAINER_PORT}" ascend-smoke
+          curl --fail --retry 20 --retry-all-errors --retry-delay 3 --max-time 5 "http://127.0.0.1:${HOST_PORT}${SMOKE_TEST_PATH}"

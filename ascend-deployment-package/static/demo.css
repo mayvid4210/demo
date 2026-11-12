@@ -1,0 +1,27 @@
+:root { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #183c34; background: #f5f6ef; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.page { max-width: 1120px; margin: auto; padding: 0 36px; }
+header, footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 0; }
+header { border-bottom: 1px solid #cfd8ce; }
+.brand { color: inherit; text-decoration: none; font-size: 25px; font-weight: 750; letter-spacing: -1px; }
+.badge, .eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 650; }
+.badge { color: #536c61; }
+main { padding: 76px 0 48px; }
+.eyebrow { color: #4b6c5e; margin: 0 0 24px; }
+h1 { margin: 0; max-width: 800px; font-size: clamp(42px, 7vw, 78px); line-height: 1.04; letter-spacing: -.055em; font-weight: 700; }
+.intro { font-size: clamp(21px, 3vw, 30px); line-height: 1.4; letter-spacing: -.025em; margin: 22px 0 16px; }
+.description { max-width: 650px; color: #53675f; font-size: 17px; line-height: 1.8; margin-bottom: 28px; }
+.button { display: inline-flex; gap: 24px; align-items: center; border-radius: 8px; padding: 16px 20px; background: #1c5141; color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; }
+.button:hover { background: #123c30; }
+a:focus-visible { outline: 3px solid #b57b17; outline-offset: 5px; }
+.details { margin-top: 64px; border-top: 1px solid #cfd8ce; padding-top: 28px; }
+h2 { font-size: 18px; letter-spacing: -.02em; margin: 0 0 24px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+article { border-radius: 10px; padding: 22px; background: #fff; border: 1px solid #e0e5db; }
+.number { font-size: 13px; color: #668070; }
+h3 { font-size: 17px; margin: 18px 0 10px; }
+article p, .note { font-size: 14px; line-height: 1.7; color: #586c61; margin: 0; }
+.note { max-width: 700px; margin-top: 28px; }
+footer { border-top: 1px solid #cfd8ce; color: #64766b; font-size: 12px; }
+@media (max-width: 680px) { .page { padding: 0 22px; } header { align-items: flex-start; flex-direction: column; gap: 12px; } main { padding-top: 48px; } .steps { grid-template-columns: 1fr; gap: 14px; } .details { margin-top: 44px; } footer { align-items: flex-start; flex-direction: column; gap: 8px; } }

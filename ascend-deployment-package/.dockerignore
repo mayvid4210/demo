@@ -1,0 +1,24 @@
+.git
+.venv
+venv
+**/__pycache__
+**/*.py[cod]
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+# Add development/private database exclusions after checking required runtime assets:
+# **/*.db
+# **/*.sqlite
+# **/*.sqlite3
+node_modules
+# Preserve application assets by default; review before excluding build directories:
+# dist
+# build
+.coverage
+htmlcov

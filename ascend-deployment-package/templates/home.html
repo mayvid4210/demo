@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A trusted Flask application for demonstrating application-to-cloud migration with Ascend.">
+    <title>Ascend Flask Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='demo.css') }}">
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="brand" href="{{ url_for('home') }}"><span aria-hidden="true">↗</span> Ascend</a>
+        <span class="badge">Cloud Computing · Sample application</span>
+      </header>
+      <main>
+        <p class="eyebrow">From localhost to the cloud</p>
+        <h1>Ascend Flask Demo</h1>
+        <p class="intro">A small application. A practical path to the cloud.</p>
+        <p class="description">Ascend is an Automated Application-to-Cloud Migration Toolkit. It inspects Python applications, identifies migration concerns, and prepares configuration files for developer review.</p>
+        <a class="button" href="{{ url_for('health') }}">Inspect the health endpoint <span aria-hidden="true">↗</span></a>
+        <section aria-labelledby="demo-heading" class="details">
+          <h2 id="demo-heading">What this demonstration includes</h2>
+          <div class="steps">
+            <article><span class="number">01</span><h3>A trusted sample</h3><p>A Flask homepage and a simple JSON health response, with no database or sign-in.</p></article>
+            <article><span class="number">02</span><h3>Generated configuration</h3><p>Docker, CI smoke checks, and a Render review template prepared through Ascend's generation pipeline.</p></article>
+            <article><span class="number">03</span><h3>Evidence to inspect</h3><p>Review build logs, open this page, and check the health endpoint to verify the environment where you run it.</p></article>
+          </div>
+        </section>
+        <p class="note">This page is the same locally and in a hosted environment. Deployment status must be verified separately.</p>
+      </main>
+      <footer><span>Built for learning, prepared for review.</span><span>Python · Flask · Ascend</span></footer>
+    </div>
+  </body>
+</html>
